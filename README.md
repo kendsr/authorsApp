@@ -6,6 +6,7 @@ PyQT5 GUI app for authors in sql server pubs database
 - PyQT5 and Qt5 Designer
 - PyODBC
 - LocalDB MS SSQL Server 16
+- Pubs sample database
 
 ## Descrption
 Application presents two list boxes (QtWidgets) designed using Qt5 Designer saved (authors.ui) and compiled with pyuic5 
