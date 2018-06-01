@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>606</width>
+    <width>958</width>
     <height>537</height>
    </rect>
   </property>
@@ -18,9 +18,14 @@
     <rect>
      <x>30</x>
      <y>60</y>
-     <width>256</width>
+     <width>651</width>
      <height>192</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLabel" name="lblAuthors">
@@ -44,18 +49,23 @@
   <widget class="QListWidget" name="lstTitles">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>60</y>
-     <width>256</width>
+     <x>30</x>
+     <y>310</y>
+     <width>661</width>
      <height>192</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLabel" name="lblTitles">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>20</y>
+     <x>40</x>
+     <y>270</y>
      <width>91</width>
      <height>31</height>
     </rect>
