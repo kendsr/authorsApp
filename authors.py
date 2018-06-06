@@ -15,11 +15,12 @@ def connectDB():
 def getAuthors():
     con = connectDB()
     cursor = con.cursor()
-    cursor.execute("select au_Id, au_fname, au_lname from authors")
+    cursor.execute("select au_fname, au_lname from authors")
     rows = cursor.fetchall()
     for row in rows:
-    	Author = f'{row.au_Id},{row.au_lname}, {row.au_fname}'
+    	Author = f'{row.au_lname},{row.au_fname}'
     	ui.lstAuthors.addItem(Author)
+    # Automatically select the first author in the list
     ui.lstAuthors.setCurrentRow(0)
 	
     cursor.close()
@@ -27,16 +28,17 @@ def getAuthors():
 
 def on_change(curr, prev):
     # Get titles for a given author when selected from list of authors
-    # split the text value to get the author id
-    id = curr.text().split(",")[0]
+    # split the text value to get the author first and last name
+    (lname, fname) = curr.text().split(",")
     # Clear list box of previous data
     ui.lstTitles.clear()
     # Connect to pubs database and set up cursor
     con = connectDB()
     cursor = con.cursor()
-    # Get all titles matching the author id
-    cursor.execute("select t.title from titleauthor ta, titles t "
-                    "where ta.au_id = ? and ta.title_id = t.title_id", id)
+    # Get all titles matching the author
+    cursor.execute("select t.title from titleauthor ta, titles t, authors a "
+                    "where a.au_fname = ? and a.au_lname = ? "
+                    "and a.au_id = ta.au_id and ta.title_id = t.title_id", fname, lname)                
     titles = cursor.fetchall()
     # Load up Titles list box
     if (len(titles) == 0):

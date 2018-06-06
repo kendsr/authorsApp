@@ -14,5 +14,5 @@ into a python file (authors_UI.py) for importing into main program (authors.py).
 
 One list box contains Auhors and another contains Titles published by the selected author
 (the first by default). The data is based on the contents of the pubs sample database -- authors titleauthor and 
-titles tables requiring a two table join to obtain titles for an author.
+titles tables requiring a three table join to obtain titles for an author.
 
